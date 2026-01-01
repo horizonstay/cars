@@ -503,17 +503,15 @@ function checkURLParams() {
     const carId = params.get('id');
 
     if (carId) {
-        // FIX: Convert both to String() to ensure "53619" matches 53619
+        // Robust comparison
         const car = cars.find(c => String(c.id) === String(carId));
         
         if (car) {
-            // Load the correct category view behind the modal
             const category = categories.find(cat => cat.id === car.category);
             if (category) {
                 showCars(category.id, category.title);
             }
-            // Open the specific car
-            openModal(car.id); // Pass the raw ID from the found object
+            openModal(car.id);
         }
     }
 }
@@ -526,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ========================================================
-//  MODAL LOGIC (Reused exactly from Apartments)
+//  MODAL & SHARE LOGIC
 // ========================================================
 
 const modalOverlay = document.getElementById('modal-overlay');
@@ -538,6 +536,16 @@ const modalThumbs = document.getElementById('modal-thumbnails');
 const linkWhatsapp = document.getElementById('link-whatsapp');
 const btnPrev = document.getElementById('btn-prev');
 const btnNext = document.getElementById('btn-next');
+
+// SHARE ELEMENTS
+const btnShare = document.getElementById('btn-share');
+const shareOverlay = document.getElementById('share-overlay');
+const closeShareBtn = document.getElementById('close-share-btn');
+const shareUrlInput = document.getElementById('share-url-input');
+const btnCopyLink = document.getElementById('btn-copy-link');
+const shareFb = document.getElementById('share-fb');
+const shareWa = document.getElementById('share-wa');
+const shareEmail = document.getElementById('share-email');
 
 // Fast Tap Fix
 function attachFastClick(element, callback) {
@@ -560,23 +568,44 @@ let currentImgIndex = 0;
 function openModal(id) {
     if (!modalOverlay) return;
 
-    // FIX: Robust comparison (String vs Number)
     const car = cars.find(c => String(c.id) === String(id));
     if (!car) return;
 
     modalTitle.textContent = car.title;
     modalDesc.textContent = car.description;
     
+    // Create Share Link
+    const baseUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
+    const shareLink = `${baseUrl}?id=${car.id}`;
+
+    // WhatsApp Booking Button
     if (linkWhatsapp) {
-        // Deep Link URL for sharing
-        // We ensure we grab the base path correctly without stacking IDs
-        const baseUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
-        const shareLink = `${baseUrl}?id=${car.id}`;
-        
         const waMsg = encodeURIComponent(`I am interested in renting the ${car.title}.\nLink: ${shareLink}`);
         linkWhatsapp.href = `https://wa.me/${GLOBAL_WHATSAPP_NUMBER}?text=${waMsg}`;
     }
 
+    // --- SHARE BUTTON LOGIC (FIXED) ---
+    // Instead of cloning, we just overwrite the onclick handler.
+    // This prevents the "stale reference" crash.
+    if (btnShare) {
+        btnShare.onclick = function() {
+            // 1. Set Input Value
+            if (shareUrlInput) shareUrlInput.value = shareLink;
+
+            // 2. Set Social Links
+            const encodedUrl = encodeURIComponent(shareLink);
+            const encodedTitle = encodeURIComponent(`Rent ${car.title}`);
+            
+            if (shareFb) shareFb.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+            if (shareWa) shareWa.href = `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`;
+            if (shareEmail) shareEmail.href = `mailto:?subject=${encodedTitle}&body=Check out this car: ${encodedUrl}`;
+
+            // 3. Show Overlay
+            if (shareOverlay) shareOverlay.classList.add('active');
+        };
+    }
+
+    // Gallery Setup
     currentGallery = car.gallery && car.gallery.length > 0 ? car.gallery : [car.image];
     currentImgIndex = 0;
     
@@ -589,7 +618,7 @@ function openModal(id) {
     modalThumbs.scrollLeft = 0; 
     updateGalleryDisplay();
 
-    // Update Browser URL for sharing (Silent update)
+    // Silent URL update
     const newUrl = '?id=' + car.id;
     window.history.pushState({path: newUrl}, '', newUrl);
 
@@ -600,15 +629,43 @@ function openModal(id) {
 function closeModal() {
     if (modalThumbs) modalThumbs.scrollLeft = 0;
     if (modalOverlay) modalOverlay.classList.remove('active');
+    // Also close share if open
+    if (shareOverlay) shareOverlay.classList.remove('active');
+    
     document.body.style.overflow = 'auto';
     
-    // Revert Browser URL
-    window.history.pushState({path: window.location.pathname}, '', window.location.pathname);
+    const cleanUrl = window.location.pathname;
+    window.history.pushState({path: cleanUrl}, '', cleanUrl);
 }
 
 if (modalOverlay) {
     modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) closeModal();
+    });
+}
+
+// --- SHARE POPUP EVENTS ---
+if (closeShareBtn) {
+    closeShareBtn.addEventListener('click', () => {
+        shareOverlay.classList.remove('active');
+    });
+}
+if (shareOverlay) {
+    shareOverlay.addEventListener('click', (e) => {
+        if (e.target === shareOverlay) shareOverlay.classList.remove('active');
+    });
+}
+if (btnCopyLink && shareUrlInput) {
+    btnCopyLink.addEventListener('click', () => {
+        shareUrlInput.select();
+        shareUrlInput.setSelectionRange(0, 99999); // Mobile fix
+        navigator.clipboard.writeText(shareUrlInput.value).then(() => {
+            const originalText = btnCopyLink.textContent;
+            btnCopyLink.textContent = "Copied!";
+            setTimeout(() => {
+                btnCopyLink.textContent = originalText;
+            }, 2000);
+        });
     });
 }
 
@@ -624,7 +681,6 @@ function updateGalleryDisplay() {
     };
     modalMainImg.src = newSrc;
 
-    // Preload
     if (currentGallery.length > 1) {
         const nextIndex = (currentImgIndex + 1) % currentGallery.length;
         const prevIndex = (currentImgIndex - 1 + currentGallery.length) % currentGallery.length;
@@ -632,7 +688,6 @@ function updateGalleryDisplay() {
         new Image().src = currentGallery[prevIndex];
     }
     
-    // Thumbnails
     const thumbs = modalThumbs.children;
     for (let i = 0; i < thumbs.length; i++) {
         thumbs[i].classList.remove('active');
