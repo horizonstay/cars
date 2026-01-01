@@ -497,8 +497,30 @@ btnBack.addEventListener('click', () => {
     pageDesc.style.display = 'block';
 });
 
+// --- DEEP LINKING (Auto-open car from URL) ---
+function checkURLParams() {
+    const params = new URLSearchParams(window.location.search);
+    const carId = params.get('id');
+
+    if (carId) {
+        const car = cars.find(c => c.id === carId);
+        if (car) {
+            // Optional: Load the correct category view behind the modal
+            const category = categories.find(cat => cat.id === car.category);
+            if (category) {
+                showCars(category.id, category.title);
+            }
+            // Open the specific car
+            openModal(carId);
+        }
+    }
+}
+
 // --- INITIALIZE ---
-document.addEventListener('DOMContentLoaded', renderCategories);
+document.addEventListener('DOMContentLoaded', () => {
+    renderCategories();
+    checkURLParams();
+});
 
 
 // ========================================================
@@ -543,7 +565,9 @@ function openModal(id) {
     modalDesc.textContent = car.description;
     
     if (linkWhatsapp) {
-        const waMsg = encodeURIComponent(`I am interested in renting the ${car.title}`);
+        // Deep Link URL for sharing
+        const shareLink = window.location.origin + window.location.pathname + '?id=' + car.id;
+        const waMsg = encodeURIComponent(`I am interested in renting the ${car.title}.`);
         linkWhatsapp.href = `https://wa.me/${GLOBAL_WHATSAPP_NUMBER}?text=${waMsg}`;
     }
 
@@ -559,6 +583,10 @@ function openModal(id) {
     modalThumbs.scrollLeft = 0; 
     updateGalleryDisplay();
 
+    // Update Browser URL for sharing
+    const newUrl = window.location.pathname + '?id=' + car.id;
+    window.history.pushState({path: newUrl}, '', newUrl);
+
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -567,6 +595,9 @@ function closeModal() {
     if (modalThumbs) modalThumbs.scrollLeft = 0;
     if (modalOverlay) modalOverlay.classList.remove('active');
     document.body.style.overflow = 'auto';
+    
+    // Revert Browser URL
+    window.history.pushState({path: window.location.pathname}, '', window.location.pathname);
 }
 
 if (modalOverlay) {
