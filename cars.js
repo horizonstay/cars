@@ -15,7 +15,7 @@ const categories = [
 const cars = [
     // --- LUXURY SUV ---
     {
-        id: 1-9850,
+        id: "1-9850",
         category: "luxury-suv",
         title: "Cadillac Escalade",
         details: "Matte Black • 7 Seats • Automatic • V8 Engine",
@@ -24,7 +24,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img922/3654/uNripE.jpg","https://imagizer.imageshack.com/img922/1052/ts4bTK.jpg","https://imagizer.imageshack.com/img923/9320/Z1mgIa.jpg","https://imagizer.imageshack.com/img922/9790/PJDAbD.jpg","https://imagizer.imageshack.com/img922/5375/TfNxgS.jpg","https://imagizer.imageshack.com/img921/4143/miENCd.jpg"]
     },
     {
-        id: 28495,
+        id: "28495",
         category: "luxury-suv",
         title: "Bently Bentayga",
         details: "Black • 5 Seats • Automatic • V8 Engine",
@@ -33,7 +33,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/3995/S17fNf.jpg","https://imagizer.imageshack.com/img924/5199/LP09cv.jpg","https://imagizer.imageshack.com/img922/6458/rk4Jr2.jpg","https://imagizer.imageshack.com/img924/2576/Yr4aZR.jpg","https://imagizer.imageshack.com/img924/6536/pc7HJv.jpg","https://imagizer.imageshack.com/img923/4504/VUtsZq.jpg","https://imagizer.imageshack.com/img922/9392/ykP5x3.jpg","https://imagizer.imageshack.com/img922/2903/YOmePT.jpg","https://imagizer.imageshack.com/img924/865/Kpf3KO.jpg","https://imagizer.imageshack.com/img923/6568/hOTPfe.jpg"]
     },
     {
-        id: 44400,
+        id: "44400",
         category: "luxury-suv",
         title: "AMG G-63 4x4²",
         details: "Sky Blue • 5 Seats • Automatic • V8 Engine",
@@ -42,7 +42,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img922/8321/DDoJZt.jpg","https://imagizer.imageshack.com/img923/7677/Wk6w94.jpg","https://imagizer.imageshack.com/img924/7351/BnjII7.jpg","https://imagizer.imageshack.com/img921/5470/pnheFE.jpg","https://imagizer.imageshack.com/img923/2323/pWYVbu.jpg","https://imagizer.imageshack.com/img924/2794/kQngX6.jpg","https://imagizer.imageshack.com/img921/9522/aWybcL.jpg","https://imagizer.imageshack.com/img922/8076/qfCT0l.jpg","https://imagizer.imageshack.com/img923/5161/a3IK9T.jpg"]
     },
     {
-        id: 57417,
+        id: "57417",
         category: "luxury-suv",
         title: "Lamborghini Urus",
         details: "Orange • 5 Seats • Automatic • V8 Engine",
@@ -51,7 +51,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img923/7664/xAtfy5.jpg","https://imagizer.imageshack.com/img922/9898/DFMitN.jpg","https://imagizer.imageshack.com/img921/3069/L74gKt.jpg","https://imagizer.imageshack.com/img923/9830/220oQZ.jpg","https://imagizer.imageshack.com/img923/2203/REh1S6.jpg","https://imagizer.imageshack.com/img921/2899/s6dkla.jpg","https://imagizer.imageshack.com/img923/5677/NHjKej.jpg","https://imagizer.imageshack.com/img924/9587/FHk6km.jpg","https://imagizer.imageshack.com/img922/2374/KJ1tCO.jpg","https://imagizer.imageshack.com/img921/7278/7C30ae.jpg"]
     },
     {
-        id: 9350,
+        id: "9350",
         category: "luxury-suv",
         title: "Range Rover Defender",
         details: "Gondwana Stone • 5 Seats • Automatic • V6 Engine",
@@ -60,7 +60,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/23/ucSWpW.jpg","https://imagizer.imageshack.com/img921/724/gToteu.jpg","https://imagizer.imageshack.com/img924/6312/QljGGt.jpg","https://imagizer.imageshack.com/img924/1170/nKgt7c.jpg","https://imagizer.imageshack.com/img923/9812/TyVlBR.jpg","https://imagizer.imageshack.com/img924/2997/mmSF55.jpg","https://imagizer.imageshack.com/img923/18/YBIWtg.jpg"]
     },
     {
-        id: 98924,
+        id: "98924",
         category: "luxury-suv",
         title: "BMW X3",
         details: "Black • 5 Seats • Automatic • V6 Engine",
@@ -69,7 +69,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img922/4811/1eR5tj.jpg","https://imagizer.imageshack.com/img922/2095/HB4iWe.jpg","https://imagizer.imageshack.com/img924/2430/zmyA9o.jpg","https://imagizer.imageshack.com/img922/1276/SjINeP.jpg","https://imagizer.imageshack.com/img922/9754/Dhk7Dd.jpg","https://imagizer.imageshack.com/img921/4551/X8VojF.jpg","https://imagizer.imageshack.com/img923/6900/Tr6zVS.jpg"]
     },
     {
-        id: 79064,
+        id: "79064",
         category: "luxury-suv",
         title: "Nissan Patrol",
         details: "Black • 8 Seats • Automatic • V6 Engine",
@@ -78,7 +78,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img924/8186/RZJXJU.jpg","https://imagizer.imageshack.com/img924/235/eTT5pz.jpg","https://imagizer.imageshack.com/img922/9596/UOLYuo.jpg","https://imagizer.imageshack.com/img923/4500/fiQUhb.jpg","https://imagizer.imageshack.com/img924/7080/oLRXdo.jpg","https://imagizer.imageshack.com/img921/653/lbNg4e.jpg","https://imagizer.imageshack.com/img922/7498/GkDNjt.jpg"]
     },
     {
-        id: 12991,
+        id: "12991",
         category: "luxury-suv",
         title: "GMC Yukon",
         details: "Black • 8 Seats • Automatic • V6 Engine",
@@ -87,7 +87,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img922/9108/UBBrPq.jpg","https://imagizer.imageshack.com/img923/2248/x5h8fN.jpg","https://imagizer.imageshack.com/img924/2562/Hsfl7v.jpg","https://imagizer.imageshack.com/img924/1848/GQ093L.jpg","https://imagizer.imageshack.com/img922/6221/wnVuPQ.jpg","https://imagizer.imageshack.com/img924/9968/qfssWB.jpg","https://imagizer.imageshack.com/img921/7721/o9Rn2s.jpg","https://imagizer.imageshack.com/img922/9584/lbHPeX.jpg"]
     },
     {
-        id: 45008,
+        id: "45008",
         category: "luxury-suv",
         title: "Range Rover Sport",
         details: "Tourmaline Brown • 5 Seats • Automatic • V6 Engine",
@@ -96,7 +96,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/6605/ysR5F8.jpg","https://imagizer.imageshack.com/img921/7117/EprxB4.jpg","https://imagizer.imageshack.com/img921/4512/MJKdok.jpg","https://imagizer.imageshack.com/img922/2811/HE83Jz.jpg","https://imagizer.imageshack.com/img923/3967/R7qn0I.jpg","https://imagizer.imageshack.com/img924/7339/PLNfcv.jpg","https://imagizer.imageshack.com/img923/8996/lDEa4e.jpg"]
     },
     {
-        id: 79818,
+        id: "79818",
         category: "luxury-suv",
         title: "Chevrolet Tahoe",
         details: "Tourmaline Brown • 8 Seats • Automatic • V8 Engine",
@@ -105,7 +105,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/6417/L6JdSX.jpg","https://imagizer.imageshack.com/img923/6941/mtfU3h.jpg","https://imagizer.imageshack.com/img921/4979/2XgM8W.jpg","https://imagizer.imageshack.com/img924/2590/yKvbop.jpg","https://imagizer.imageshack.com/img922/4067/KqTZB1.jpg","https://imagizer.imageshack.com/img921/2416/04xy1Y.jpg","https://imagizer.imageshack.com/img924/6981/zlFYra.jpg"]
     },
     {
-        id: 2-9850,
+        id: "2-9850",
         category: "luxury-suv",
         title: "Range Rover Vogue",
         details: "Black • 5 Seats • Automatic • V6 Engine",
@@ -114,7 +114,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img923/4672/2VKeyG.jpg","https://imagizer.imageshack.com/img924/9620/3uyPv3.jpg","https://imagizer.imageshack.com/img923/2255/MvuIJ3.jpg","https://imagizer.imageshack.com/img923/8003/ZkTpRa.jpg","https://imagizer.imageshack.com/img922/5499/0XYn1T.jpg","https://imagizer.imageshack.com/img922/6605/wBPqIx.jpg","https://imagizer.imageshack.com/img924/5843/WTOrTt.jpg","https://imagizer.imageshack.com/img923/1041/7RpYRQ.jpg"]
     },
     {
-        id: 9170,
+        id: "9170",
         category: "luxury-suv",
         title: "Mercedes G63",
         details: "White • 5 Seats • Automatic • V8 Engine",
@@ -123,7 +123,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/8329/duKSUH.jpg","https://imagizer.imageshack.com/img921/9652/GdZvnz.jpg","https://imagizer.imageshack.com/img922/5030/7bW44t.jpg","https://imagizer.imageshack.com/img922/5273/yqjQhI.jpg","https://imagizer.imageshack.com/img923/5637/LBLWzB.jpg","https://imagizer.imageshack.com/img923/4627/RcefhF.jpg","https://imagizer.imageshack.com/img922/7961/6zq0HY.jpg"]
     },
     {
-        id: 8350,
+        id: "8350",
         category: "luxury-suv",
         title: "Range Rover Sport",
         details: "White • 5 Seats • Automatic • V6 Engine",
@@ -132,7 +132,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img923/3590/5iRSLS.jpg","https://imagizer.imageshack.com/img922/7223/sYV8Hm.jpg","https://imagizer.imageshack.com/img921/5840/sTFcch.jpg","https://imagizer.imageshack.com/img923/1002/9akcK3.jpg","https://imagizer.imageshack.com/img923/2002/QotM2A.jpg"]
     },
     {
-        id: 24466,
+        id: "24466",
         category: "luxury-suv",
         title: "Lamborghini Urus",
         details: "Matte Black • 5 Seats • Automatic • V8 Engine",
@@ -141,7 +141,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img923/8788/5js0vQ.jpg","https://imagizer.imageshack.com/img924/1953/L71o5j.jpg","https://imagizer.imageshack.com/img921/5923/iZ3e73.jpg","https://imagizer.imageshack.com/img923/3286/0GgW09.jpg","https://imagizer.imageshack.com/img922/3931/ba99ym.jpg","https://imagizer.imageshack.com/img924/1768/i5jPB6.jpg","https://imagizer.imageshack.com/img922/9416/aetplf.jpg","https://imagizer.imageshack.com/img923/1206/9lpJI2.jpg","https://imagizer.imageshack.com/img921/7964/tmJumP.jpg","https://imagizer.imageshack.com/img921/7321/yIjzgA.jpg"]
     },
     {
-        id: 6380,
+        id: "6380",
         category: "luxury-suv",
         title: "Range Rover Defender",
         details: "Matte Black • 5 Seats • Automatic • V8 Engine",
@@ -150,7 +150,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img924/3461/M2Y5s3.jpg","https://imagizer.imageshack.com/img921/3258/6HS66d.jpg","https://imagizer.imageshack.com/img924/7756/OJdVGW.jpg","https://imagizer.imageshack.com/img923/9227/dWUCia.jpg","https://imagizer.imageshack.com/img921/2683/FS93la.jpg","https://imagizer.imageshack.com/img922/8564/nz6J4X.jpg","https://imagizer.imageshack.com/img924/5347/zKR8ft.jpg"]
     },
     {
-        id: 16067,
+        id: "16067",
         category: "luxury-suv",
         title: "Nissan Patrol",
         details: "White • 8 Seats • Automatic • V6 Engine",
@@ -159,7 +159,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/5738/gGpBuM.jpg","https://imagizer.imageshack.com/img924/9414/6azNCJ.jpg","https://imagizer.imageshack.com/img921/9858/gN52J0.jpg","https://imagizer.imageshack.com/img921/4416/9vjSva.jpg","https://imagizer.imageshack.com/img921/1999/uB7O6e.jpg","https://imagizer.imageshack.com/img921/2770/QE5tEE.jpg"]
     },
     {
-        id: 2-9350,
+        id: "2-9350",
         category: "luxury-suv",
         title: "Range Rover Sport",
         details: "Matte Gray • 5 Seats • Automatic • V6 Engine",
@@ -169,7 +169,7 @@ const cars = [
     },
     // --- ECONOMY SUV ---
     {
-        id: 84985,
+        id: "84985",
         category: "economy-suv",
         title: "Kia Sorento",
         details: "White • 7 Seats • Automatic • Efficient",
@@ -178,7 +178,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img922/5530/GhIy8K.jpg","https://imagizer.imageshack.com/img924/5642/kundgP.jpg","https://imagizer.imageshack.com/img923/5159/zFRLww.jpg","https://imagizer.imageshack.com/img921/3923/mOJJYf.jpg","https://imagizer.imageshack.com/img923/2922/S8y5Cv.jpg","https://imagizer.imageshack.com/img923/6030/dpl5IG.jpg","https://imagizer.imageshack.com/img921/1706/YAgF96.jpg"]
     },
     {
-        id: 32120,
+        id: "32120",
         category: "economy-suv",
         title: "Kia Sportage",
         details: "Jungle Green • 5 Seats • Automatic • Efficient",
@@ -187,7 +187,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img924/1581/8lqdb0.jpg","https://imagizer.imageshack.com/img924/5261/brpgFj.jpg","https://imagizer.imageshack.com/img922/567/Y0uu9a.jpg","https://imagizer.imageshack.com/img921/8981/Is9Sqb.jpg","https://imagizer.imageshack.com/img923/964/VJSlAm.jpg","https://imagizer.imageshack.com/img924/5993/BDAaSg.jpg","https://imagizer.imageshack.com/img922/3549/KbgLCw.jpg"]
     },
     {
-        id: 84986,
+        id: "84986",
         category: "economy-suv",
         title: "Kia Seltos",
         details: "Red • 5 Seats • Automatic • Efficient",
@@ -196,7 +196,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/6176/lSWTBG.jpg","https://imagizer.imageshack.com/img921/3308/FZMUPa.jpg","https://imagizer.imageshack.com/img923/8027/dkXVMX.jpg","https://imagizer.imageshack.com/img922/6467/65ksgM.jpg","https://imagizer.imageshack.com/img923/1792/oUIXl1.jpg","https://imagizer.imageshack.com/img923/3711/CIsD8g.jpg","https://imagizer.imageshack.com/img924/3344/85pyy6.jpg"]
     },
     {
-        id: 31859,
+        id: "31859",
         category: "economy-suv",
         title: "Kia Sportage",
         details: "White • 5 Seats • Automatic • Efficient",
@@ -206,7 +206,7 @@ const cars = [
     },
     // --- SPORT CARS ---
     {
-        id: 51082,
+        id: "51082",
         category: "sport",
         title: "Mercedes GT43 - GT63 Kit",
         details: "Black • 4 Seats • Automatic • V6 Engine",
@@ -216,7 +216,7 @@ const cars = [
     },
     // --- CONVERTIBLE CARS ---
     {
-        id: 24740,
+        id: "24740",
         category: "convertible",
         title: "Audi A5",
         details: "Black • 4 Seats • Automatic • V4 Engine",
@@ -225,7 +225,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/9692/K8bcXu.jpg","https://imagizer.imageshack.com/img921/2334/gy9q0z.jpg","https://imagizer.imageshack.com/img921/3267/hpESbu.jpg","https://imagizer.imageshack.com/img923/2582/HdyNXr.jpg","https://imagizer.imageshack.com/img921/7185/eheMfO.jpg","https://imagizer.imageshack.com/img924/1996/pHVdtE.jpg","https://imagizer.imageshack.com/img923/1499/oWV9hB.jpg"]
     },
     {
-        id: 11314,
+        id: "11314",
         category: "convertible",
         title: "Mercedes CLE 200",
         details: "Black • 4 Seats • Automatic • V4 Engine",
@@ -234,7 +234,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/2453/0P6piO.jpg","https://imagizer.imageshack.com/img921/2186/3hk5Al.jpg","https://imagizer.imageshack.com/img922/7887/cb4vce.jpg","https://imagizer.imageshack.com/img921/484/XmZYzl.jpg","https://imagizer.imageshack.com/img923/6707/RCZ2Rg.jpg","https://imagizer.imageshack.com/img922/7316/Y1h2Jc.jpg","https://imagizer.imageshack.com/img924/4810/oMp1Nv.jpg","https://imagizer.imageshack.com/img921/5787/FXTE45.jpg","https://imagizer.imageshack.com/img924/9334/IWcvpQ.jpg","https://imagizer.imageshack.com/img923/5507/3KzepV.jpg","https://imagizer.imageshack.com/img924/2222/ynHPWY.jpg","https://imagizer.imageshack.com/img922/3492/xRbitI.jpg","https://imagizer.imageshack.com/img923/4379/b2WQEZ.jpg","https://imagizer.imageshack.com/img924/918/Y0VYIO.jpg","https://imagizer.imageshack.com/img922/8395/tRpl5N.jpg","https://imagizer.imageshack.com/img923/2442/vJNT64.jpg","https://imagizer.imageshack.com/img922/2774/oXLopP.jpg","https://imagizer.imageshack.com/img923/3233/7vXHzv.jpg"]
     },
     {
-        id: 29746,
+        id: "29746",
         category: "convertible",
         title: "BMW 420i",
         details: "Brooklyn Grey Metallic • 4 Seats • Automatic • V4 Engine",
@@ -243,7 +243,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/8529/kJo9Q7.jpg","https://imagizer.imageshack.com/img924/6808/XH5fsj.jpg","https://imagizer.imageshack.com/img923/484/dcpP4p.jpg","https://imagizer.imageshack.com/img922/7688/SFvNAM.jpg","https://imagizer.imageshack.com/img923/8744/0RAZmz.jpg","https://imagizer.imageshack.com/img923/6163/5RkcCi.jpg","https://imagizer.imageshack.com/img921/6260/T2bCWI.jpg","https://imagizer.imageshack.com/img922/9274/DoAnsx.jpg","https://imagizer.imageshack.com/img923/4750/lKfVuh.jpg","https://imagizer.imageshack.com/img923/1632/n8ngG6.jpg","https://imagizer.imageshack.com/img923/65/JO2gpo.jpg","https://imagizer.imageshack.com/img921/1746/I2BLle.jpg","https://imagizer.imageshack.com/img922/8483/uY4qv4.jpg","https://imagizer.imageshack.com/img924/2346/ueAFzd.jpg"]
     },
     {
-        id: 71916,
+        id: "71916",
         category: "convertible",
         title: "Mercedes E200",
         details: "Graphite Grey Metallic • 4 Seats • Automatic • V4 Engine",
@@ -252,7 +252,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img921/8196/MfaxbM.jpg","https://imagizer.imageshack.com/img923/5521/yEP7Wt.jpg","https://imagizer.imageshack.com/img923/9633/qWUHoI.jpg","https://imagizer.imageshack.com/img922/995/DDa3dF.jpg","https://imagizer.imageshack.com/img924/236/Gsggf1.jpg","https://imagizer.imageshack.com/img923/2305/89a57L.jpg","https://imagizer.imageshack.com/img924/5497/bq7mNl.jpg"]
     },
     {
-        id: 98818,
+        id: "98818",
         category: "convertible",
         title: "BMW 430i",
         details: "Tanzanite Blue • 4 Seats • Automatic • V4 Engine",
@@ -262,7 +262,7 @@ const cars = [
     },
     // --- SUPER CARS ---
     {
-        id: 69750,
+        id: "69750",
         category: "super",
         title: "Corvette Stingray",
         details: "Yellow • 2 Seats • Automatic • V8 Engine",
@@ -271,7 +271,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img923/3292/BTMEy3.jpg","https://imagizer.imageshack.com/img924/5772/q4uAw5.jpg","https://imagizer.imageshack.com/img921/7771/ZXOyps.jpg","https://imagizer.imageshack.com/img924/1831/GiT7vx.jpg","https://imagizer.imageshack.com/img923/3218/dgzjQ6.jpg","https://imagizer.imageshack.com/img922/1251/cSA6C4.jpg","https://imagizer.imageshack.com/img922/1442/c5jlIw.jpg","https://imagizer.imageshack.com/img921/5616/HjbAmW.jpg","https://imagizer.imageshack.com/img922/3509/fIAVjG.jpg","https://imagizer.imageshack.com/img922/8499/Gi6cPh.jpg"]
     },
     {
-        id: 3046,
+        id: "3046",
         category: "super",
         title: "Ferrari F8 Tributo Spider",
         details: "Cherry Red • 2 Seats • Automatic • V8 Engine",
@@ -280,7 +280,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img923/8955/wLLgvo.jpg","https://imagizer.imageshack.com/img921/4233/KSwUCL.jpg","https://imagizer.imageshack.com/img921/3972/OKixPS.jpg","https://imagizer.imageshack.com/img924/6996/Pn1nOw.jpg","https://imagizer.imageshack.com/img922/5479/CXdECK.jpg","https://imagizer.imageshack.com/img922/3797/wFzUXr.jpg","https://imagizer.imageshack.com/img923/6271/M0cXdH.jpg","https://imagizer.imageshack.com/img922/9910/A7ggti.jpg","https://imagizer.imageshack.com/img924/4663/rgVLOy.jpg","https://imagizer.imageshack.com/img924/5996/VC6kUz.jpg"]
     },
     {
-        id: 1-3064,
+        id: "1-3064",
         category: "super",
         title: "Porsche 911 Turbo S",
         details: "Orange • 4 Seats • Automatic • V6 Engine",
@@ -289,16 +289,16 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img922/107/PPg2g1.jpg","https://imagizer.imageshack.com/img923/1593/COccIR.jpg","https://imagizer.imageshack.com/img924/2930/dZOmaa.jpg","https://imagizer.imageshack.com/img923/425/DCulsh.jpg","https://imagizer.imageshack.com/img922/505/kJtkbN.jpg","https://imagizer.imageshack.com/img922/3204/zrnogy.jpg","https://imagizer.imageshack.com/img924/42/0plBYv.jpg"]
     },
     {
-        id: 2-3064,
+        id: "2-3064",
         category: "super",
-        title: "Lamborghini Huracán EVO Spyder",
+        title: "Lamborghini Huracán EVO Spyder",
         details: "Matte Black • 2 Seats • Automatic • V10 Engine",
         description: "The Lamborghini Huracán EVO Spyder is a thrilling supercar, offering an open-top driving experience with dynamic style and unmatched presence—ideal for luxury trips, special occasions, or anyone wanting an unforgettable ride.",
         image: "https://imagizer.imageshack.com/img921/4943/Cd7kqu.jpg",
         gallery: ["https://imagizer.imageshack.com/img922/7657/Jmh9ex.jpg","https://imagizer.imageshack.com/img922/3936/uXDG3E.jpg","https://imagizer.imageshack.com/img921/7438/XXtDmE.jpg","https://imagizer.imageshack.com/img922/7184/vHcWLl.jpg","https://imagizer.imageshack.com/img924/7082/cPPfKB.jpg","https://imagizer.imageshack.com/img923/8361/AqBLrI.jpg","https://imagizer.imageshack.com/img922/3855/0w8tnK.jpg","https://imagizer.imageshack.com/img924/1863/bYACwg.jpg","https://imagizer.imageshack.com/img921/5210/VjZ87O.jpg","https://imagizer.imageshack.com/img921/4843/xT0aWF.jpg"]
     },
     {
-        id: 82153,
+        id: "82153",
         category: "super",
         title: "McLaren 720s Spider",
         details: "Belize Blue • 2 Seats • Automatic • V8 Engine",
@@ -307,7 +307,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img923/4866/7FnBFl.jpg","https://imagizer.imageshack.com/img924/1459/jj3xgT.jpg","https://imagizer.imageshack.com/img922/4488/rgletv.jpg","https://imagizer.imageshack.com/img923/9348/UgEHvV.jpg","https://imagizer.imageshack.com/img923/779/xyRAwC.jpg","https://imagizer.imageshack.com/img923/3037/UAS3Kz.jpg","https://imagizer.imageshack.com/img924/7012/roRhkH.jpg","https://imagizer.imageshack.com/img922/541/8orSEp.jpg","https://imagizer.imageshack.com/img921/1399/AmwH0I.jpg","https://imagizer.imageshack.com/img923/5770/0DXkpK.jpg"]
     },
     {
-        id: 30611,
+        id: "30611",
         category: "super",
         title: "Corvette C8",
         details: "Red • 2 Seats • Automatic • V8 Engine",
@@ -316,7 +316,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img924/1844/4VX0hX.jpg","https://imagizer.imageshack.com/img921/1388/MZsIj6.jpg","https://imagizer.imageshack.com/img922/6273/L2qWZr.jpg","https://imagizer.imageshack.com/img921/63/X0qsRL.jpg","https://imagizer.imageshack.com/img922/4581/zPD024.jpg","https://imagizer.imageshack.com/img923/750/BK2ywh.jpg","https://imagizer.imageshack.com/img922/9193/mDASrB.jpg"]
     },
     {
-        id: 3998,
+        id: "3998",
         category: "super",
         title: "Porsche 911 GT3 RS",
         details: "Malachite Green Metallic • 2 Seats • Automatic • V6 Engine",
@@ -325,7 +325,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img923/8131/NuYgtk.jpg","https://imagizer.imageshack.com/img922/9026/g3qkIA.jpg","https://imagizer.imageshack.com/img922/2218/fgNQ3J.jpg","https://imagizer.imageshack.com/img924/5901/RoM7wy.jpg","https://imagizer.imageshack.com/img922/1477/YJneWY.jpg","https://imagizer.imageshack.com/img921/5272/VOYCzT.jpg","https://imagizer.imageshack.com/img922/2993/p382P3.jpg","https://imagizer.imageshack.com/img922/5328/AN7QK1.jpg","https://imagizer.imageshack.com/img924/8562/1XhuZI.jpg","https://imagizer.imageshack.com/img924/3466/PYrvMf.jpg","https://imagizer.imageshack.com/img921/2020/cHGz3s.jpg","https://imagizer.imageshack.com/img923/3168/SWMqOv.jpg"]
     },
     {
-        id: 53619,
+        id: "53619",
         category: "super",
         title: "Ferrari 296 GTB",
         details: "Black • 2 Seats • Automatic • V6 Engine",
@@ -334,16 +334,16 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img922/2968/cNSGhL.jpg","https://imagizer.imageshack.com/img921/7206/O77rAi.jpg","https://imagizer.imageshack.com/img924/8164/fNOJXo.jpg","https://imagizer.imageshack.com/img922/8075/othVwd.jpg","https://imagizer.imageshack.com/img924/5048/CfPd6r.jpg","https://imagizer.imageshack.com/img923/5572/uYZU74.jpg","https://imagizer.imageshack.com/img921/2235/2FZzvl.jpg","https://imagizer.imageshack.com/img924/1976/F72udJ.jpg","https://imagizer.imageshack.com/img921/7058/OGpRfX.jpg","https://imagizer.imageshack.com/img922/2326/tvV3q1.jpg"]
     },
     {
-        id: 36295,
+        id: "36295",
         category: "super",
-        title: "Lamborghini Huracán EVO Spyder",
+        title: "Lamborghini Huracán EVO Spyder",
         details: "Yellow • 2 Seats • Automatic • V10 Engine",
         description: "The Lamborghini Huracán EVO Spyder is a thrilling supercar, offering an open-top driving experience with dynamic style and unmatched presence—ideal for luxury trips, special occasions, or anyone wanting an unforgettable ride.",
         image: "https://imagizer.imageshack.com/img922/3451/hSGvha.jpg",
         gallery: ["https://imagizer.imageshack.com/img922/1600/5nmDL9.jpg","https://imagizer.imageshack.com/img921/1539/PbPd3n.jpg","https://imagizer.imageshack.com/img924/7200/y2YTSp.jpg","https://imagizer.imageshack.com/img921/3420/t0VRTN.jpg","https://imagizer.imageshack.com/img924/2633/mol49D.jpg","https://imagizer.imageshack.com/img923/293/LUurso.jpg"]
     },
     {
-        id: 45356,
+        id: "45356",
         category: "super",
         title: "Porsche 911 Turbo S",
         details: "Black • 4 Seats • Automatic • V6 Engine",
@@ -352,9 +352,9 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img924/7821/bZiNCB.jpg","https://imagizer.imageshack.com/img921/8160/S599EP.jpg","https://imagizer.imageshack.com/img922/7798/63ZaKn.jpg","https://imagizer.imageshack.com/img921/7263/Aq6UhI.jpg","https://imagizer.imageshack.com/img923/7201/HaoqaJ.jpg","https://imagizer.imageshack.com/img923/7065/eQdV6g.jpg","https://imagizer.imageshack.com/img923/9674/tVVJ2B.jpg","https://imagizer.imageshack.com/img922/4236/GiEkuT.jpg","https://imagizer.imageshack.com/img921/2514/wG3S14.jpg"]
     },
     {
-        id: 52440,
+        id: "52440",
         category: "super",
-        title: "Lamborghini Huracán EVO Spyder",
+        title: "Lamborghini Huracán EVO Spyder",
         details: "Black • 2 Seats • Automatic • V10 Engine",
         description: "The Lamborghini Huracán EVO Spyder is a thrilling supercar, offering an open-top driving experience with dynamic style and unmatched presence—ideal for luxury trips, special occasions, or anyone wanting an unforgettable ride.",
         image: "https://imagizer.imageshack.com/img924/8195/mJzl9q.jpg",
@@ -362,7 +362,7 @@ const cars = [
     },
     // --- LUXURY SEDAN ---
     {
-        id: 9270,
+        id: "9270",
         category: "luxury-sedan",
         title: "BMW 740i",
         details: "White • 5 Seats • Automatic • V6 Engine",
@@ -371,7 +371,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img924/3807/A466Y2.jpg","https://imagizer.imageshack.com/img921/1439/w99YiN.jpg","https://imagizer.imageshack.com/img923/2668/4iMcbk.jpg","https://imagizer.imageshack.com/img923/8238/l49NHO.jpg","https://imagizer.imageshack.com/img924/505/3cCtOs.jpg"]
     },
     {
-        id: 9450,
+        id: "9450",
         category: "luxury-sedan",
         title: "Mercedes S500",
         details: "Black • 5 Seats • Automatic • V6 Engine",
@@ -380,7 +380,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img924/5136/URHs3O.jpg","https://imagizer.imageshack.com/img924/6917/ecGGqH.jpg", "https://imagizer.imageshack.com/img922/9651/8CBgXD.jpg", "https://imagizer.imageshack.com/img923/9462/aJfJmr.jpg", "https://imagizer.imageshack.com/img921/8845/gsVkAi.jpg", "https://imagizer.imageshack.com/img922/7162/cv1Eu6.jpg"]
     },
     {
-        id: 41277,
+        id: "41277",
         category: "luxury-sedan",
         title: "Kia K5",
         details: "Black • 5 Seats • Automatic • V4 Engine",
@@ -389,7 +389,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img922/4186/P6pphT.jpg","https://imagizer.imageshack.com/img923/4863/MQAjpt.jpg","https://imagizer.imageshack.com/img924/5697/my5VxW.jpg","https://imagizer.imageshack.com/img923/7245/eBWzSI.jpg","https://imagizer.imageshack.com/img921/6904/WCrLoa.jpg","https://imagizer.imageshack.com/img921/9872/w32lxa.jpg","https://imagizer.imageshack.com/img922/3976/Q4JYSG.jpg","https://imagizer.imageshack.com/img923/7803/j7jN1Z.jpg","https://imagizer.imageshack.com/img924/3894/XRpHRi.jpg"]
     },
     {
-        id: 51317,
+        id: "51317",
         category: "luxury-sedan",
         title: "Mercedes C200",
         details: "Graphite Grey Metallic • 5 Seats • Automatic • V4 Engine",
@@ -398,7 +398,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img923/5417/3pNrqh.jpg","https://imagizer.imageshack.com/img922/7057/tXXF5h.jpg","https://imagizer.imageshack.com/img924/3415/5jbujg.jpg","https://imagizer.imageshack.com/img922/5697/j0MI9P.jpg","https://imagizer.imageshack.com/img922/9962/jR9rgz.jpg","https://imagizer.imageshack.com/img924/9024/uyTg6m.jpg","https://imagizer.imageshack.com/img923/4667/srrZB5.jpg"]
     },
     {
-        id: 76223,
+        id: "76223",
         category: "luxury-sedan",
         title: "Kia K5",
         details: "Wolf Grey • 5 Seats • Automatic • V4 Engine",
@@ -407,7 +407,7 @@ const cars = [
         gallery: ["https://imagizer.imageshack.com/img923/6507/p2QOld.jpg","https://imagizer.imageshack.com/img923/4593/EysMei.jpg","https://imagizer.imageshack.com/img921/9703/LhoOcf.jpg","https://imagizer.imageshack.com/img922/4100/WHSZID.jpg","https://imagizer.imageshack.com/img923/6365/Gr5TFz.jpg","https://imagizer.imageshack.com/img922/1401/tyo55T.jpg"]
     },
     {
-        id: 27321,
+        id: "27321",
         category: "luxury-sedan",
         title: "Mercedes E200",
         details: "White • 5 Seats • Automatic • V4 Engine",
@@ -466,7 +466,7 @@ function showCars(categoryId, categoryTitle) {
                         <h2 class="apt-title gradient-text">${car.title}</h2>
                         <p class="apt-details">${car.details}</p>
                         <div class="btn-container">
-                            <button class="btn-explore" onclick="openModal(${car.id})">Details</button>
+                            <button class="btn-explore" onclick="openModal('${car.id}')">Details</button>
                         </div>
                     </div>
                 </article>
