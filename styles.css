@@ -1,0 +1,383 @@
+/* --- 1. Base Setup & Variables --- */
+:root {
+    --bg-color: #0d1126;
+    --card-bg: #151b36; 
+    --grad-start: #ed4264; 
+    --grad-end: #ffedbc;
+    --text-color: #e0e0e0;
+    --skeleton-base: #1f294a;
+    --skeleton-highlight: #2a365e;
+    
+    /* Brand Colors */
+    --airbnb-color: #FF5A5F;
+    --booking-color: #003580;
+    --whatsapp-color: #25D366;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Gradient Text --- */
+.gradient-text {
+    background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* --- Header --- */
+header {
+    text-align: center;
+    padding: 40px 20px 0px 20px; 
+    background-color: var(--bg-color);
+}
+
+.logo-img { max-width: 100%; width: 120px; height: auto; display: inline-block; }
+
+/* --- Section Header --- */
+.section-header {
+    text-align: left;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    border-left: 3px solid rgba(237, 66, 100, 0.5);
+    padding-left: 25px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    margin-bottom: 15px;
+    font-weight: 300;
+    display: block;
+}
+
+.section-title span {
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-desc {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #b0b0b0;
+}
+
+/* --- Grid & Cards --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    flex-grow: 1; 
+}
+
+.apartment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 80px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(237, 66, 100, 0.15);
+    border-color: rgba(237, 66, 100, 0.4);
+}
+
+/* Skeleton Animation Shared Class */
+.skeleton-anim::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, var(--skeleton-highlight), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer { 100% { transform: translateX(100%); } }
+
+/* Card Image Wrapper */
+.img-wrapper {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    background-color: var(--skeleton-base);
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.card-image.loaded { opacity: 1; }
+
+.card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+.apt-title { font-size: 1.5rem; margin-bottom: 8px; }
+.apt-details { font-size: 0.95rem; color: #ccc; margin-bottom: 25px; line-height: 1.6; }
+
+/* Explore Button */
+.btn-container { margin-top: auto; }
+.btn-explore {
+    display: block; width: 100%; padding: 14px; border-radius: 8px;
+    font-weight: bold; text-align: center; text-decoration: none;
+    text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem;
+    background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
+    color: var(--bg-color); 
+    box-shadow: 0 4px 15px rgba(237, 66, 100, 0.3);
+    transition: opacity 0.3s ease, transform 0.2s ease; cursor: pointer;
+    border: none; outline: none;
+}
+.btn-explore:hover { opacity: 0.95; transform: scale(1.02); }
+
+/* --- Footer --- */
+footer {
+    background-color: var(--card-bg); text-align: center; padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: auto;
+}
+.footer-text { color: #888; font-size: 0.9rem; letter-spacing: 1px; }
+
+/* --- MODAL STYLES --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); z-index: 2000;
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.active { opacity: 1; visibility: visible; }
+
+.modal-content {
+    background-color: var(--bg-color); width: 90%; max-width: 1000px;
+    height: 90vh; 
+    border-radius: 20px; 
+    position: relative; display: flex; flex-direction: column;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transform: scale(0.9); opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    overflow: hidden;
+}
+
+@media(min-width: 768px) {
+    .modal-content { height: 650px; max-height: 90vh; }
+}
+
+.modal-overlay.active .modal-content { transform: scale(1); opacity: 1; }
+
+/* Close Button */
+.close-modal {
+    position: absolute; top: 20px; right: 20px; z-index: 50; 
+    width: 44px; height: 44px; background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: background 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.close-modal svg { width: 22px; height: 22px; fill: white; pointer-events: none; }
+.close-modal:hover { background-color: rgba(237, 66, 100, 0.8); }
+
+/* Modal Layout */
+.modal-body { 
+    display: flex; flex-direction: column; 
+    height: 100%; overflow: hidden; 
+}
+
+@media(min-width: 768px) {
+    .modal-body { flex-direction: row; }
+    .modal-gallery { width: 60%; height: 100%; }
+    .modal-info { width: 40%; height: 100%; }
+}
+
+/* Gallery Section */
+.modal-gallery {
+    position: relative; background-color: black;
+    display: flex; flex-direction: column; justify-content: center;
+    flex: 1; min-height: 300px;
+}
+
+.main-image-container {
+    flex-grow: 1; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    height: 350px; background-color: var(--bg-color); 
+    min-height: 0;
+}
+
+.modal-main-img {
+    max-width: 100%; max-height: 100%; object-fit: contain;
+    opacity: 0; transition: opacity 0.3s ease;
+    position: relative; z-index: 2;
+}
+
+.modal-main-img.visible { opacity: 1; }
+
+/* --- NAV ARROWS --- */
+.gallery-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(0,0,0,0.5); 
+    color: white; border: none;
+    padding: 10px 15px; cursor: pointer; font-size: 1.5rem;
+    transition: background 0.1s ease;
+    z-index: 5; display: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    outline: none; 
+    user-select: none;
+}
+
+.gallery-nav:hover { background: rgba(0,0,0,0.5); }
+
+@media (hover: hover) and (pointer: fine) {
+    .gallery-nav:hover { background: rgba(237, 66, 100, 0.8); }
+}
+
+.gallery-nav:active { background: rgba(237, 66, 100, 0.8) !important; }
+.gallery-nav:focus { background: rgba(0,0,0,0.5); }
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+
+/* Thumbnails */
+.thumbnails-row {
+    display: flex; gap: 10px; padding: 10px; overflow-x: auto;
+    background: var(--bg-color);
+    flex-shrink: 0; height: 70px;
+}
+.thumb {
+    width: 70px; height: 50px; object-fit: cover; border-radius: 4px;
+    opacity: 0.5; cursor: pointer; border: 2px solid transparent; flex-shrink: 0;
+    transition: opacity 0.2s, border-color 0.2s;
+}
+.thumb.active, .thumb:hover { opacity: 1; border-color: var(--grad-start); }
+
+/* Info Section */
+.modal-info { 
+    padding: 30px; display: flex; flex-direction: column; 
+    position: relative; overflow-y: auto; flex: 1; 
+}
+.modal-title { font-size: 2rem; margin-bottom: 10px; color: white; margin-top: 10px; padding-right: 30px; }
+.modal-desc { font-size: 1rem; line-height: 1.7; color: #ccc; margin-bottom: 30px; white-space: pre-line; }
+
+/* Buttons */
+.modal-actions { margin-top: auto; display: flex; flex-direction: column; gap: 12px; padding-bottom: 10px; flex-shrink: 0; }
+.action-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; padding: 12px; border-radius: 8px;
+    text-decoration: none; font-weight: bold; font-size: 0.95rem;
+    transition: transform 0.2s, opacity 0.2s; color: white;
+    cursor: pointer;
+}
+.action-btn:hover { transform: translateY(-2px); opacity: 0.95; }
+.action-btn img { width: 24px; height: 24px; object-fit: contain; }
+
+.btn-whatsapp { background-color: var(--whatsapp-color); }
+.btn-airbnb { background-color: var(--airbnb-color); }
+.btn-booking { background-color: var(--booking-color); }
+
+/* --- MOBILE PORTRAIT & LANDSCAPE FIX --- */
+/* Applies to both standard mobile portrait and small landscape devices */
+@media (max-width: 600px), (max-height: 500px) and (orientation: landscape) {
+    .section-header { padding-left: 15px; margin-bottom: 30px; }
+    .section-title { font-size: 2rem; }
+
+    /* Make modal behave like a full webpage */
+    .modal-content {
+        height: 100% !important;
+        max-height: 100% !important;
+        width: 100% !important;
+        border-radius: 0;
+        display: block !important; /* Stack vertically */
+        overflow-y: auto !important; /* Enable global scroll */
+    }
+
+    .modal-body {
+        height: auto !important;
+        border-radius: 0;
+        display: block !important;
+        overflow: visible !important;
+    }
+
+    .modal-gallery {
+        flex: none !important;
+        height: auto !important;
+    }
+
+    .main-image-container {
+        /* Fixed height for image, but user can scroll past it */
+        height: 300px !important;
+    }
+
+    .modal-info {
+        height: auto !important;
+        overflow: visible !important; /* Text grows naturally */
+        flex: none !important;
+        padding-bottom: 60px; /* Space for buttons */
+    }
+
+    /* Fix Close Button so it stays on screen while scrolling */
+    .close-modal {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 100; /* Ensure it's above everything */
+    }
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    display: none; /* Hidden by default */
+}
+
+.btn-back {
+    background: none;
+    border: 1px solid var(--grad-start);
+    color: var(--text-color);
+    padding: 8px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: var(--grad-start);
+    color: white;
+}
