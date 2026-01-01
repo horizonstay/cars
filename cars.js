@@ -503,15 +503,17 @@ function checkURLParams() {
     const carId = params.get('id');
 
     if (carId) {
-        const car = cars.find(c => c.id === carId);
+        // FIX: Convert both to String() to ensure "53619" matches 53619
+        const car = cars.find(c => String(c.id) === String(carId));
+        
         if (car) {
-            // Optional: Load the correct category view behind the modal
+            // Load the correct category view behind the modal
             const category = categories.find(cat => cat.id === car.category);
             if (category) {
                 showCars(category.id, category.title);
             }
             // Open the specific car
-            openModal(carId);
+            openModal(car.id); // Pass the raw ID from the found object
         }
     }
 }
@@ -558,7 +560,8 @@ let currentImgIndex = 0;
 function openModal(id) {
     if (!modalOverlay) return;
 
-    const car = cars.find(c => c.id === id);
+    // FIX: Robust comparison (String vs Number)
+    const car = cars.find(c => String(c.id) === String(id));
     if (!car) return;
 
     modalTitle.textContent = car.title;
@@ -566,8 +569,11 @@ function openModal(id) {
     
     if (linkWhatsapp) {
         // Deep Link URL for sharing
-        const shareLink = window.location.origin + window.location.pathname + '?id=' + car.id;
-        const waMsg = encodeURIComponent(`I am interested in renting the ${car.title}.`);
+        // We ensure we grab the base path correctly without stacking IDs
+        const baseUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
+        const shareLink = `${baseUrl}?id=${car.id}`;
+        
+        const waMsg = encodeURIComponent(`I am interested in renting the ${car.title}.\nLink: ${shareLink}`);
         linkWhatsapp.href = `https://wa.me/${GLOBAL_WHATSAPP_NUMBER}?text=${waMsg}`;
     }
 
@@ -583,8 +589,8 @@ function openModal(id) {
     modalThumbs.scrollLeft = 0; 
     updateGalleryDisplay();
 
-    // Update Browser URL for sharing
-    const newUrl = window.location.pathname + '?id=' + car.id;
+    // Update Browser URL for sharing (Silent update)
+    const newUrl = '?id=' + car.id;
     window.history.pushState({path: newUrl}, '', newUrl);
 
     modalOverlay.classList.add('active');
