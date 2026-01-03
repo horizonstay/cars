@@ -503,14 +503,14 @@ footer {
 /* --- NAVIGATION LINKS (Underline Style) --- */
 .main-nav {
     display: flex;
-    gap: 20px; /* Space between words */
+    gap: 15px; /* Space between words */
 }
 
 .nav-link {
     text-decoration: none;
     color: #888; /* Gray by default */
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 300;
     padding-bottom: 5px; /* Space for the line */
     position: relative; /* Needed to position the line */
     transition: color 0.3s ease;
