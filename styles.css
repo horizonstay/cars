@@ -44,8 +44,8 @@ header {
     z-index: 1000; /* Ensure it floats above everything */
     
     /* Modern Glass Effect */
-    background-color: rgba(13, 17, 38, 0.95); /* Semi-transparent dark blue */
-    backdrop-filter: blur(3px); /* Blurs content behind it */
+    background-color: rgba(13, 17, 38, 0.85); /* Semi-transparent dark blue */
+    backdrop-filter: blur(5px); /* Blurs content behind it */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 
